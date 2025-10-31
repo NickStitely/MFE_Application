@@ -1,0 +1,22 @@
+<div style="border: 1px solid red">
+  <div>
+    Remote Application One
+  </div>
+  <br />
+  <div class="pill-group">
+    @for (item of [
+      { title: 'Date Entry Component', link: 'date-entry-one', internal: true }
+    ]; track item.title) {
+      <a class="pill"
+        [routerLink]="item.internal ? item.link : null"
+        [href]="!item.internal ? item.link : null"
+        [rel]="!item.internal ? 'noopener' : null">
+        <span>{{ item.title }}</span>
+      </a>
+    }
+  </div>
+  <router-outlet />
+</div>
+
+
+
