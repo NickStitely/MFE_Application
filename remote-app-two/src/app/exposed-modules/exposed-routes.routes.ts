@@ -4,10 +4,10 @@ import { AppContainerComponent } from "./app-container/app-container.component";
 
 export const exposedRoutes: Routes = [
     { path: '', 
-      component: AppContainerComponent, 
+      component: AppContainerComponent,
       children: [
         { path: 'date-entry-one', component: DateEntryOne }
-      ] 
-    }
+      ]
+     }
   ];
   

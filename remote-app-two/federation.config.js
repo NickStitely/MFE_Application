@@ -2,14 +2,15 @@ const { withNativeFederation, shareAll } = require('@angular-architects/native-f
 
 module.exports = withNativeFederation({
 
-  remotes: {
-    'remote-app-one': 'http://localhost:4201/remoteEntry.json',
-    'remote-app-two': 'http://localhost:4202/remoteEntry.json'
+  name: 'remote-app-two',
+
+  exposes: {
+    './ExposedModules': './src/app/exposed-modules/exposed-modules.module.ts',
   },
 
   shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
-    '@NickStitely/my-lib': { singleton: true, strictVersion: false, requiredVersion: '1.0.0' }
+    ...shareAll({ singleton: true, strictVersion: false, requiredVersion: 'auto' }),
+    '@NickStitely/my-lib': { singleton: true, strictVersion: false, requiredVersion: '2.0.0' }
   },
 
   skip: [

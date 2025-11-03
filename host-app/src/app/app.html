@@ -1,15 +1,44 @@
-<main class="main">
-  <div>
-    <h1>Host Application</h1>
-    <nav>
+
+<div class="app-container">
+  <!-- 1. Top Banner -->
+  <header class="top-banner">
+    <h1>Host Application: User Service Id: {{ userService["unique_id"] }}.</h1>
+  </header>
+  
+  <div class="content-container">
+    <!-- 2. Side Menu -->
+    <nav class="side-menu expanded" id="sideMenu">
+      <button class="toggle-menu" (click)="toggleMenu()">≡</button>
       <ul>
-        <li><a [routerLink]="''">Host Home</a></li>
-        <li><a [routerLink]="'test-page'">Test Page</a></li>
-        <li><a [routerLink]="'remote-app-one/date-entry-one'">Remote App One</a></li>
+        <li>
+          <a [routerLink]="''">
+            <span class="icon">🏠</span>
+            <span class="text">Host Home</span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="'remote-app-one/date-entry-one'">
+            <span class="icon">📱</span>
+            <span class="text">Remote App One</span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="'remote-app-two/date-entry-one'">
+            <span class="icon">📲</span>
+            <span class="text">Remote App Two</span>
+          </a>
+        </li>
       </ul>
     </nav>
+    
+    <!-- 3. Main Content -->
+    <main class="main-content">
+      <router-outlet></router-outlet>
+    </main>
   </div>
-</main>
-
-
-<router-outlet />
+  
+  <!-- 4. Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Host Application. All rights reserved.</p>
+  </footer>
+</div>

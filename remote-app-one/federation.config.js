@@ -10,6 +10,7 @@ module.exports = withNativeFederation({
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: false, requiredVersion: 'auto' }),
+    '@NickStitely/my-lib': { singleton: true, strictVersion: false, requiredVersion: '1.0.0' }
   },
 
   skip: [

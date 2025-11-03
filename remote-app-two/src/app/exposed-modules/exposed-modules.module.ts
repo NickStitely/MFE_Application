@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MyLibModule } from '@NickStitely/my-lib';
@@ -13,8 +13,7 @@ import { exposedRoutes } from './exposed-routes.routes';
     CommonModule,
     FormsModule,
     RouterModule.forChild(exposedRoutes),
-    MyLibModule,
-    RouterOutlet
+    MyLibModule
   ],
   exports: [AppContainerComponent, DateEntryOne]
 })
