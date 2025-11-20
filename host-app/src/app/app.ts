@@ -11,8 +11,8 @@ import { UserService } from '@NickStitely/my-lib';
 export class App {
   protected readonly title = signal('host-app');
 
-  public constructor(@Inject(UserService) public userService: UserService){
-
+  //public constructor(@Inject(UserService) public userService: UserService){
+    public constructor(){
   }
 
   toggleMenu() {

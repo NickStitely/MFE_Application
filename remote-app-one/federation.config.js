@@ -1,4 +1,4 @@
-const { withNativeFederation, shareAll } = require('@angular-architects/native-federation/config');
+const { withNativeFederation, shareAll, share } = require('@angular-architects/native-federation/config');
 
 module.exports = withNativeFederation({
 
@@ -10,7 +10,12 @@ module.exports = withNativeFederation({
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: false, requiredVersion: 'auto' }),
-    '@NickStitely/my-lib': { singleton: true, strictVersion: false, requiredVersion: '1.0.0' }
+    '@NickStitely/my-lib': { 
+      singleton: true, 
+      strictVersion: false, 
+      requiredVersion: 'auto',
+      eager: false,
+    }
   },
 
   skip: [

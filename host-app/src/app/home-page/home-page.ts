@@ -8,8 +8,8 @@ import { UserService } from '@NickStitely/my-lib';
 })
 export class HomePage implements OnInit {
 
-    public constructor(@Inject(UserService) public userService: UserService) {
-
+    //public constructor(@Inject(UserService) public userService: UserService) {
+    public constructor(){
     }
 
     public ngOnInit(): void {
